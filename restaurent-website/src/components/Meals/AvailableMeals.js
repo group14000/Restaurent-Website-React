@@ -1,7 +1,9 @@
+// Importing the 'Card' and 'MealItem' components and CSS classes for styling
 import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 
+// Dummy data representing available meals
 const DUMMY_MEALS = [
   {
     id: 'm1',
@@ -12,7 +14,7 @@ const DUMMY_MEALS = [
   {
     id: 'm2',
     name: 'Schnitzel',
-    description: 'A german specialty!',
+    description: 'A German specialty!',
     price: 16.5,
   },
   {
@@ -29,7 +31,9 @@ const DUMMY_MEALS = [
   },
 ];
 
+// Defining the 'AvailableMeals' functional component
 const AvailableMeals = () => {
+  // Mapping over the dummy meals data to create a list of 'MealItem' components
   const mealsList = DUMMY_MEALS.map((meal) => (
     <MealItem
       key={meal.id}
@@ -40,8 +44,10 @@ const AvailableMeals = () => {
     />
   ));
 
+  // Rendering a section with a card containing the list of meals
   return (
     <section className={classes.meals}>
+      {/* Wrapping the meal list in a 'Card' component */}
       <Card>
         <ul>{mealsList}</ul>
       </Card>
@@ -49,4 +55,5 @@ const AvailableMeals = () => {
   );
 };
 
+// Exporting the 'AvailableMeals' component for use in other parts of the application
 export default AvailableMeals;
